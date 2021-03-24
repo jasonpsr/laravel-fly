@@ -7,7 +7,7 @@
     <title>@yield('title', 'laravel-fly') - 基于 layui 的极简社区页面模版</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="keywords" content="fly,layui,前端社区">
-    <meta name="description" content="Fly社区是模块化前端UI框架Layui的官网社区，致力于为web开发提供强劲动力">
+    <meta name="description" content="@yield('description', 'LaraBBS 爱好者社区')" />
     <link rel="stylesheet" href="/res/layui/css/layui.css">
     <link rel="stylesheet" href="/res/css/global.css">
 </head>

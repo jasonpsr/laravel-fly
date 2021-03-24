@@ -4,14 +4,27 @@
 @section('content')
     <div class="fly-panel fly-column">
         <div class="layui-container">
+
+
+            <!-- Left Side Of Navbar -->
+            <ul class="navbar-nav mr-auto">
+
+            </ul>
+
             <ul class="layui-clear">
-                <li class="layui-hide-xs layui-this"><a href="/">首页</a></li>
+                {{--<li class="layui-hide-xs layui-this"><a href="/">首页</a></li>
                 <li><a href="jie/index.html">提问</a></li>
                 <li><a href="jie/index.html">分享<span class="layui-badge-dot"></span></a></li>
                 <li><a href="jie/index.html">讨论</a></li>
                 <li><a href="jie/index.html">建议</a></li>
                 <li><a href="jie/index.html">公告</a></li>
-                <li><a href="jie/index.html">动态</a></li>
+                <li><a href="jie/index.html">动态</a></li>--}}
+                <li class="{{ active_class(if_route('topics.index')) }}"><a class="nav-link" href="{{ route('topics.index') }}">话题</a></li>
+                <li class="{{ active_class((if_route('categories.show') && if_route_param('category', 1))) }}"><a class="nav-link" href="{{ route('categories.show', 1) }}">分享</a></li>
+                <li class="{{ active_class((if_route('categories.show') && if_route_param('category', 2))) }}"><a class="nav-link" href="{{ route('categories.show', 2) }}">教程</a></li>
+                <li class="{{ active_class((if_route('categories.show') && if_route_param('category', 3))) }}"><a class="nav-link" href="{{ route('categories.show', 3) }}">问答</a></li>
+                <li class="{{ active_class((if_route('categories.show') && if_route_param('category', 4))) }}"><a class="nav-link" href="{{ route('categories.show', 4) }}">公告</a></li>
+
                 <li class="layui-hide-xs layui-hide-sm layui-show-md-inline-block"><span class="fly-mid"></span></li>
 
                 <!-- 用户登入后显示 -->
@@ -21,10 +34,10 @@
 
             <div class="fly-column-right layui-hide-xs">
                 <span class="fly-search"><i class="layui-icon"></i></span>
-                <a href="jie/add.html" class="layui-btn">发表新帖</a>
+                <a href="{{ route('topics.create') }}" class="layui-btn">发表新帖</a>
             </div>
             <div class="layui-hide-sm layui-show-xs-block" style="margin-top: -10px; padding-bottom: 10px; text-align: center;">
-                <a href="jie/add.html" class="layui-btn">发表新帖</a>
+                <a href="{{ route('topics.create') }}" class="layui-btn">发表新帖</a>
             </div>
         </div>
     </div>
@@ -174,10 +187,10 @@
                         <span class="fly-mid"></span>
                         <a href="">精华</a>
                         <span class="fly-filter-right layui-hide-xs">
-            <a href="" class="layui-this">按最新</a>
-            <span class="fly-mid"></span>
-            <a href="">按热议</a>
-          </span>
+                          <a href="" class="layui-this">按最新</a>
+                          <span class="fly-mid"></span>
+                          <a href="">按热议</a>
+                        </span>
                     </div>
 
                     <ul class="fly-list">
