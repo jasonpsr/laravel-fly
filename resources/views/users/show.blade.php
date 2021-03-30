@@ -27,6 +27,12 @@
 
         <p class="fly-home-sign">{{ $user->introduction }}</p>
 
+        <h5><strong>注册于</strong></h5>
+        <p>{{ $user->created_at->diffForHumans() }}</p>
+        <hr>
+        <h5><strong>最后活跃</strong></h5>
+        <p title="{{  $user->last_actived_at }}">{{ $user->last_actived_at->diffForHumans() }}</p>
+
         <div class="fly-sns" data-user="">
             <a href="javascript:;" class="layui-btn layui-btn-primary fly-imActive" data-type="addFriend">加为好友</a>
             <a href="javascript:;" class="layui-btn layui-btn-normal fly-imActive" data-type="chat">发起会话</a>
